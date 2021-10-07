@@ -27,7 +27,6 @@ let questions = [
         summa: 600
     }
 ]
-
 let q = 4, prize = 0
 
 for (let i = 0; i < questions.length; i++) {
