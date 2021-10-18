@@ -9,6 +9,7 @@ for(let i = 0; i < 3; i++){
             slider.insertAdjacentHTML('afterbegin', '<button type="button" id="toLeft"> < </button>')
             img.innerHTML = '<img src= "./big/big_' + i + '.jpg" />'
             slider.insertAdjacentHTML('beforeend', '<button type="button" id="toRight"> > </button>')
+
             let min = 0, max = 2, num = i
             let buttonLeft = document.getElementById('toLeft')
 
