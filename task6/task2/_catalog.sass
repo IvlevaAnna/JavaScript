@@ -1,0 +1,110 @@
+@import "vars"
+
+.top
+  background-color: #F8F3F4
+  height: 148px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  &_heading
+    font-size: 24px
+    line-height: 29px
+    color: #F16D7F
+
+.breadcrumbs
+  &_ul
+    display: flex
+
+  &_li
+    list-style-type: none
+    &:last-of-type .breadcrumbs_link
+      font-weight: bold
+      font-size: 14px
+      line-height: 17px
+      color: #F16D7F
+
+    &:not(:last-of-type)::after
+      content: '/'
+      padding: 0 6px
+      font-weight: 300
+      font-size: 14px
+      line-height: 17px
+      color: #636363
+
+  &_link
+    font-weight: 300
+    font-size: 14px
+    line-height: 17px
+    color: #636363
+    &:hover
+      color: $colorSite
+
+.filters
+  display: flex
+  gap: 304px
+  padding-top: 51px
+  &_svg_big
+    display: none
+
+  &_item
+    display: flex
+    align-items: baseline
+    &:not(:last-of-type)
+      gap: 11px
+
+    &:last-of-type
+      gap: 28px
+
+    &_main
+      font-weight: 600
+      font-size: 14px
+      line-height: 17px
+      color: #000000
+
+    &_details
+      font-size: 14px
+      line-height: 17px
+      color: $var5
+
+    &_summary
+      cursor: pointer
+
+    &_summary::marker
+      display: none
+      content: ""
+
+    &_summary::after
+      content: url('img/vector.png')
+      padding-left: 10px
+
+.items_mt
+  margin-top: 65px
+
+.centring
+  text-align: center
+  margin-bottom: 96px
+
+.pagination
+  display: inline-block
+  margin: 0 auto
+  border: 1px solid #EBEBEB
+  padding: 15px
+  &_box
+    display: flex
+    gap: 15px
+
+  &_link
+    font-weight: 300
+    font-size: 16px
+    line-height: 19px
+    color: #C4C4C4
+    &:hover
+      color: $colorSite
+      &path
+        fill: $colorSite
+
+  &_button
+    border: none
+    background: transparent
+    &:hover path
+      fill: $colorSite
