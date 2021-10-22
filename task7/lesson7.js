@@ -67,7 +67,8 @@ function startGame() {
     respawn();//создали змейку
 
     snake_timer = setInterval(move, SNAKE_SPEED);//каждые 200мс запускаем функцию move
-    setTimeout(createFood, 5000);
+    setTimeout(createFood, 3000);
+    setTimeout(createBomb, 5000);
 }
 
 /**
@@ -138,6 +139,9 @@ function move() {
             // удаляем хвост
             removed.setAttribute('class', classes[0] + ' ' + classes[1]);
         }
+        if (haveBomb(new_unit)) {
+            finishTheGame()
+        }
     }
     else {
         finishTheGame();
@@ -180,6 +184,23 @@ function haveFood(unit) {
 }
 
 /**
+ * проверка на бомбу
+ * @param unit
+ * @returns {boolean}
+ */
+function haveBomb(unit) {
+    var check = false;
+
+    var unit_classes = unit.getAttribute('class').split(' ');
+
+    // Если бомба
+    if (unit_classes.includes('bomb-unit')) {
+        check = true;
+    }
+    return check;
+}
+
+/**
  * Создание еды
  */
 function createFood() {
@@ -206,19 +227,6 @@ function createFood() {
     }
 }
 
-/**
-* проверка на бомбу
-*/
-function haveBomb(unit) {
-    var check = false;
-
-    var unit_classes = unit.getAttribute('class').split(' ');
-
-    // Если бомба
-    if (unit_classes.includes('bomb-unit')) {
-        finishTheGame()
-    }
-}
 /**
  * Создание бомб
  */
