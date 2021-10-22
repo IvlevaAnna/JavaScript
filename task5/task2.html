@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1</title>
+  <style>
+    .white {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: white;
+      height: 100px;
+      width: 100px;
+    }
+
+    .black {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: black;
+      color: white;
+      height: 100px;
+      width: 100px;
+    }
+
+    row, column {
+      display: flex;
+    }
+
+    .board {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .block {
+      height: 50px;
+      width: 100px;
+      text-align: center;
+    }
+
+    .rotate{
+      transform: rotate(180deg);
+    }
+  </style>
+  <div class="board" id="board"></div>
+  <script>
+    let columns = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+    let columnsStart = document.createElement('column')
+    columnsStart.innerHTML = '<div class="block"></div>'
+    board.append(columnsStart)
+    for (let i = 0; i < columns.length; i++) {
+      columnsStart.insertAdjacentHTML('beforeEnd', '<div class="block">'+
+              columns[i] + '</div>')
+    }
+    columnsStart.insertAdjacentHTML('beforeEnd', '<div class="block"></div>')
+
+    for (let i = 0; i < columns.length; i++) {
+      let row = document.createElement('row')
+      row.insertAdjacentHTML('beforeEnd', '<div class="block">'+ (i + 1) +
+              '</div>')
+      board.append(row)
+      for (let j =0; j < 8; j++){
+        switch (i) {
+          case 0:
+            switch (j) {
+              case 0:
+                checkMate(row, 'Л', i, j)
+                break;
+              case 7:
+                checkMate(row, 'Л', i, j)
+                break;
+              case 1:
+                checkMate(row, 'К', i, j)
+                break;
+              case 6:
+                checkMate(row, 'К', i, j)
+                break;
+              case 2:
+                checkMate(row, 'С', i, j)
+                break;
+              case 5:
+                checkMate(row, 'С', i, j)
+                break;
+              case 3:
+                checkMate(row, 'Ф', i, j)
+                break;
+              case 4:
+                checkMate(row, 'Кр', i, j)
+                break;
+              default:
+                checkMate(row, '', i, j)
+                break;
+            }
+            break;
+          case 7:
+            switch (j){
+              case 0:
+                checkMate(row, 'Л', i, j)
+                break;
+              case 7:
+                checkMate(row, 'Л', i, j)
+                break;
+              case 1:
+                checkMate(row, 'К', i, j)
+                break;
+              case 6:
+                checkMate(row, 'К', i, j)
+                break;
+              case 2:
+                checkMate(row, 'С', i, j)
+                break;
+              case 5:
+                checkMate(row, 'С', i, j)
+                break;
+              case 3:
+                checkMate(row, 'Ф', i, j)
+                break;
+              case 4:
+                checkMate(row, 'Кр', i, j)
+                break;
+              default:
+                checkMate(row, '', i, j)
+                break;
+            }
+            break;
+          case 1:
+            checkMate(row, 'П', i, j)
+            break;
+          case 6:
+            checkMate(row, 'П', i, j)
+            break;
+          default:
+            checkMate(row, '', i, j)
+            break;
+        }
+
+      }
+      row.insertAdjacentHTML('beforeEnd', '<div class="block rotate">'+ (i + 1) +
+              '</div>')
+    }
+
+    function checkMate( row, text, i, j ){
+      if ( i % 2 == 0)
+        if (j % 2 == 0)
+          row.insertAdjacentHTML('beforeEnd',
+                  '<div class="black">' + text + '</div>')
+        else
+          row.insertAdjacentHTML('beforeEnd',
+                  '<div class="white">' + text + '</div>')
+      else
+        if (j % 2 == 0)
+          row.insertAdjacentHTML('beforeEnd',
+                '<div class="white">' + text + '</div>')
+        else
+          row.insertAdjacentHTML('beforeEnd',
+                '<div class="black">' + text + '</div>')
+    }
+
+    let columnsEnd = document.createElement('column')
+    columnsEnd.innerHTML = '<div class="block"></div>'
+    board.append(columnsEnd)
+    for (let i = 0; i < columns.length; i++) {
+      columnsEnd.insertAdjacentHTML('beforeEnd', '<div class="block rotate">'+
+              columns[i] + '</div>')
+    }
+    columnsEnd.insertAdjacentHTML('beforeEnd', '<div class="block"></div>')
+
+    document.querySelector('div').append(board)
+  </script>
+</head>
+<body>
+
+</body>
+</html>
