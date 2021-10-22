@@ -1,0 +1,147 @@
+@import "vars"
+
+.cart
+  padding-top: 96px
+  padding-bottom: 128px
+  display: flex
+  justify-content: space-between
+  &_left
+    &_cards
+      display: flex
+      flex-direction: column
+      gap: 40px
+
+    &_card
+      display: flex
+      justify-content: space-between
+      max-width: 652px
+      background: #FFFFFF
+      filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13))
+
+    &_buttons
+      padding-top: 72px
+      display: flex
+      justify-content: space-between
+
+    &_button
+      font-weight: 300
+      font-size: 14px
+      line-height: 17px
+      color: #000000
+      padding: 16px 40px
+      border: 1px solid #A4A4A4
+      background: transparent
+      cursor: pointer
+      &:hover
+        background: #A4A4A4
+        color: #FFFFFF
+
+    &_img
+      width: 262px
+      height: 306px
+
+    &_text
+      display: flex
+      flex-direction: column
+      gap: 42px
+      padding: 22px 57px 0px 31px
+      font-size: 22px
+      line-height: 26px
+      color: #575757
+      &_heading
+        font-size: 24px
+        line-height: 29px
+        color: #222222
+
+      &_text
+        display: flex
+        flex-direction: column
+        gap: 6px
+
+    &_close
+      padding: 28px 22px 0 0
+
+  &_right
+    display: flex
+    flex-direction: column
+    gap: 57px
+    &_form
+      display: flex
+      flex-direction: column
+      gap: 21px
+
+    &_heading
+      font-weight: 300
+      font-size: 16px
+      line-height: 19px
+      color: #222222
+
+    &_input
+      box-sizing: border-box
+      padding: 12px 0 15px 16px
+      width: 360px
+      font-weight: 300
+      font-size: 13px
+      line-height: 16px
+      color: #222222
+      &:focus
+        outline: none
+
+    &_button
+      font-weight: 300
+      font-size: 11px
+      line-height: 13px
+      color: #4A4A4A
+      padding: 10px 14px
+      border: 1px solid #A4A4A4
+      background: transparent
+      cursor: pointer
+      box-sizing: border-box
+      width: 104px
+      &:hover
+        background: #A4A4A4
+        color: #FFFFFF
+
+    &_total
+      width: 360px
+      box-sizing: border-box
+      display: flex
+      flex-direction: column
+      background: #F5F3F3
+      padding: 39px 34px 42px 44px
+      &_text
+        display: flex
+        flex-direction: column
+        text-align: right
+        color: #4A4A4A
+        gap: 12px
+        padding-bottom: 21px
+        border-bottom: 1px solid #E2E2E2
+        margin-bottom: 17px
+        &_text
+          font-size: 11px
+          line-height: 13px
+
+        &_heading
+          font-weight: 300
+          font-size: 16px
+          line-height: 19px
+          color: #222222
+
+      &_button
+        padding: 16px 42px
+        border: 1px solid #F16D7F
+        background: #F16D7F
+        font: 300 16px Lato
+        line-height: 19px
+        color: #FFFFFF
+        &:hover
+          background: #FFFFFF
+          color: #F16D7F
+
+.input_box
+  margin-left: 24px
+  width: 44px
+
+.colored
+  color: $colorSite
